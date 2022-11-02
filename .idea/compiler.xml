@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="A101_FinalCase" />
         <module name="KloiaCaseStudy" />
+        <module name="KloiaBootcampBDD" />
       </profile>
     </annotationProcessing>
   </component>

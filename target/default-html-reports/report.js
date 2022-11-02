@@ -22,57 +22,67 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
-formatter.step({
-  "name": "I close the pop up",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "casestudy.step_def.MyStepdefs.iCloseThePopUp()"
-});
-formatter.result({
-  "status": "passed"
-});
 formatter.scenario({
-  "name": "Verify page title",
+  "name": "Add product to basket with login",
   "description": "",
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "Page title verification",
+  "name": "I login with facebook",
   "keyword": "When "
 });
 formatter.match({
-  "location": "casestudy.step_def.MyStepdefs.pageTitleVerification()"
+  "location": "casestudy.step_def.MyStepdefs.iLoginWithFacebook()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Maximize windows",
+  "name": "I verify logged in on hb homepage",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "casestudy.step_def.MyStepdefs.maximizeWindows()"
+  "location": "casestudy.step_def.MyStepdefs.iVerifyLoggedInOnHbHomepage()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Search for Drone",
+  "name": "I search with \"ayakkabı\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "casestudy.step_def.MyStepdefs.searchForDrone()"
+  "location": "casestudy.step_def.MyStepdefs.iSearchWith(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Verify search results are listed for Drone",
+  "name": "I go to any product detail page",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "casestudy.step_def.MyStepdefs.iGoToAnyProductDetailPage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I add basket product with two different seller",
   "keyword": "And "
 });
 formatter.match({
-  "location": "casestudy.step_def.MyStepdefs.verifySearchResultsAreListedForDrone()"
+  "location": "casestudy.step_def.MyStepdefs.iAddBasketProductWithTwoDifferentSeller()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I verify product on basket page",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "casestudy.step_def.MyStepdefs.iVerifyProductOnBasketPage()"
 });
 formatter.result({
   "status": "passed"

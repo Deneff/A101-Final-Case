@@ -1,89 +1,58 @@
 package casestudy.step_def;
 
-import casestudy.pages.SearchResultPage;
-import casestudy.pages.SignInPage;
+import casestudy.pages.LoginPage;
+import casestudy.pages.ProductDetailPage;
+import casestudy.pages.ProductListPage;
+import casestudy.utils.Helper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Se;
-import org.apache.hc.core5.util.Asserts;
-import org.junit.Assert;
 import casestudy.pages.HomePage;
 import casestudy.utils.Driver;
 
 public class MyStepdefs {
     HomePage homepage = new HomePage();
-    SearchResultPage searchResultPage = new SearchResultPage();
-    SignInPage signInPage = new SignInPage();
+    LoginPage loginpage  = new LoginPage();
+    ProductListPage productlistpage = new ProductListPage();
 
+    ProductDetailPage productdetailpage = new ProductDetailPage();
     @Given("homepage is open")
     public void homepageIsOpen() {
-        homepage.chooseUS();
+        homepage.verifyHomePage();
     }
 
-    @When("I close the pop up")
-    public void iCloseThePopUp() {
-
-        homepage.closePopup();
-    }
-
-
-    @When("Page title verification")
-    public void pageTitleVerification() {
-        homepage.getPageTitle();
-    }
-
-    @Then("Maximize windows")
-    public void maximizeWindows() {
-        Driver.get().manage().window().maximize();
-    }
-
-    @And("Search for Drone")
-    public void searchForDrone() {
-        homepage.searchInput.click();
-        homepage.searchInput.sendKeys("drone");
-        homepage.searchButton.click();
+    @When("I login with facebook")
+    public void iLoginWithFacebook() {
+        homepage.goToLoginPage();
+        loginpage.loginWithFacebook();
 
     }
 
-    @And("Verify search results are listed for Drone")
-    public void verifySearchResultsAreListedForDrone() {
-        searchResultPage.verifySearchResult();
+    @Then("I verify logged in on hb homepage")
+    public void iVerifyLoggedInOnHbHomepage() {
+        homepage.verifyILoggedIn();
     }
 
-    @When("I open {string} dropdown menu")
-    public void iOpenDropdownMenu(String dropdown) {
-        homepage.openDropdown(dropdown);
+    @And("I search with {string}")
+    public void iSearchWith(String keyword) {
+        homepage.searchWithKeyword(keyword);
     }
 
-    @Then("I Choose {string} submenu")
-    public void IChooseSubmenu(String submenu) {
-        homepage.openSubmenu(submenu);
+    @Then("I go to any product detail page")
+    public void iGoToAnyProductDetailPage() {
+        productlistpage.goToProductPage();
+
     }
 
-    @Then("Sign in page should open")
-    public void signInPageShouldOpen() {
-        signInPage.verifyTitle();
-    }
-
-    @Then("I filled account information")
-    public void iFilledAccountInformation() {
-        signInPage.fillInformation();
-    }
-
-    @And("I press Enter button")
-    public void iPressEnterButton() {
-        signInPage.sendEnter();
-    }
-    @And("Verify successful login")
-    public void verifySuccessfulLogin() {
-        signInPage.verifySignIn();
-    }
+    @And("I add basket product with two different seller")
+    public void iAddBasketProductWithTwoDifferentSeller() {
+        productdetailpage.goToProductPage();
 
 
-    @Then("Sign in with Google")
-    public void signInWithGoogle() {
-        signInPage.openGoogleLogin();
+    }
+
+    @Then("I verify product on basket page")
+    public void iVerifyProductOnBasketPage() {
     }
 }

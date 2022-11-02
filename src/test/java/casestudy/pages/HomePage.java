@@ -1,8 +1,7 @@
 package casestudy.pages;
 
 import casestudy.utils.Helper;
-import org.junit.Assert;
-import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,37 +13,38 @@ public class HomePage {
 
     }
 
-    @FindBy(css = "[alt='United States']")
-    public WebElement country;
-    @FindBy(css = ".c-close-icon.c-modal-close-icon")
-    public WebElement closeButton;
-    @FindBy(css ="#gh-search-input")
-    public WebElement searchInput;
-    @FindBy(css= ".header-search-button")
-    public WebElement searchButton;
+    @FindBy(css = "a[title='Hepsiburada']")
+    public WebElement hbLogo;
 
-    public void chooseUS() {
-        country.click();
+    @FindBy(css = "#myAccount")
+    public WebElement accountButton;
+
+    @FindBy(css="#login")
+    public WebElement loginButton;
+
+    @FindBy(css="a[title='Hesabım']")
+    public WebElement accountTitle;
+
+    @FindBy(css=".SearchBoxOld-sfMlfEXVp4n_X7Z5DwbW")
+    public WebElement searchBox;
+
+    public void verifyHomePage() {
+        hbLogo.click();
     }
 
-    public void closePopup() {
-        closeButton.click();
+    public void goToLoginPage() {
+        accountButton.click();
+        loginButton.click();
     }
 
-    public void getPageTitle() {
-        String expectedTitle = "Best Buy | Official Online Store | Shop Now & Save";
-
-        Assert.assertEquals(expectedTitle, Driver.get().getTitle());
-        System.out.println(Driver.get().getTitle());
+    public void verifyILoggedIn() {
+     accountTitle.isDisplayed();
     }
 
-    public void openDropdown(String dropdown) {
-        String locator = "//span[text()='" + dropdown + "']";
-        Driver.get().findElement(By.xpath(locator)).click();
+    public void searchWithKeyword(String keyword) {
+        searchBox.click();
+        searchBox.sendKeys(keyword);
+        searchBox.sendKeys(Keys.RETURN);
+        Helper.waitFor(10);
     }
-
-    public void openSubmenu(String submenu) {
-        Helper.clickWithLinkText(submenu);
-    }
-
 }
