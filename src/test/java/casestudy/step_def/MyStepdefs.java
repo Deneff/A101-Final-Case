@@ -1,22 +1,20 @@
 package casestudy.step_def;
 
-import casestudy.pages.LoginPage;
-import casestudy.pages.ProductDetailPage;
-import casestudy.pages.ProductListPage;
+import casestudy.pages.*;
 import casestudy.utils.Helper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import casestudy.pages.HomePage;
 import casestudy.utils.Driver;
 
 public class MyStepdefs {
     HomePage homepage = new HomePage();
     LoginPage loginpage  = new LoginPage();
     ProductListPage productlistpage = new ProductListPage();
-
     ProductDetailPage productdetailpage = new ProductDetailPage();
+
+    BasketPage basketpage = new BasketPage();
     @Given("homepage is open")
     public void homepageIsOpen() {
         homepage.verifyHomePage();
@@ -47,12 +45,13 @@ public class MyStepdefs {
 
     @And("I add basket product with two different seller")
     public void iAddBasketProductWithTwoDifferentSeller() {
-        productdetailpage.goToProductPage();
+        productdetailpage.addProductToBasket();
 
 
     }
 
     @Then("I verify product on basket page")
     public void iVerifyProductOnBasketPage() {
+        basketpage.verifyProducts();
     }
 }

@@ -10,7 +10,7 @@ public class ProductListPage {
     public ProductListPage() {
         PageFactory.initElements(Driver.get(), this);
     }
-   @FindBy (css="#i2")
+   @FindBy (css="#i1")
    public WebElement productCard;
 
     public void goToProductPage() {

@@ -11,10 +11,18 @@ public class ProductDetailPage {
         PageFactory.initElements(Driver.get(), this);
     }
 
-    public void goToProductPage() {
+    @FindBy (css="#product-name")
+    WebElement productName;
+
+    @FindBy (css="a[href='https://checkout.hepsiburada.com/sepetim']")
+    WebElement shoppingCart;
+    public static String productNameText = "";
+    public void addProductToBasket() {
         Helper.switchTab();
-        Helper.yetisYaAli("#tabMerchant .add-to-basket.button");
-        Helper.waitFor(10);
+        productNameText = productName.getText();
+        Helper.addTwoDifferentProducts(".add-to-basket.button.small");
+        Helper.waitFor(1);
+        shoppingCart.click();
 
     }
 }
