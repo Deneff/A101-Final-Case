@@ -85,10 +85,8 @@ formatter.match({
   "location": "casestudy.step_def.MyStepdefs.iVerifyProductOnBasketPage()"
 });
 formatter.result({
-  "error_message": "org.junit.ComparisonFailure: expected:\u003c...ilgisayar 82H8020BTX[]\u003e but was:\u003c...ilgisayar 82H8020BTX[Gri]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:117)\r\n\tat org.junit.Assert.assertEquals(Assert.java:146)\r\n\tat casestudy.pages.BasketPage.verifyProducts(BasketPage.java:15)\r\n\tat casestudy.step_def.MyStepdefs.iVerifyProductOnBasketPage(MyStepdefs.java:55)\r\n\tat ✽.I verify product on basket page(file:///C:/Users/ysfcl/IdeaProjects/A101-Final-Case/src/test/resources/features/study.feature:12)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png", "screenshot");
 formatter.after({
   "status": "passed"
 });
