@@ -11,14 +11,16 @@ public class LoginPage {
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy (css="button#btnFacebook")
-    public WebElement facebookButton;
-    @FindBy (css="#email")
+    @FindBy (css="button#btnGoogle")
+    public WebElement googleButton;
+    @FindBy (css="#identifierId")
     public WebElement emailInput;
-    @FindBy (css="#pass")
+    @FindBy (css="#password input")
     public WebElement passInput;
-    @FindBy (css="#loginbutton")
-    public WebElement loginButton;
+    @FindBy (css="#identifierNext")
+    public WebElement continueEmailButton;
+    @FindBy (css="#passwordNext")
+    public WebElement continuePassButton;
     @FindBy (css="#onetrust-accept-btn-handler")
     public WebElement agreeButton;
 
@@ -26,11 +28,12 @@ public class LoginPage {
     public void loginWithFacebook() {
         agreeButton.click();
         Helper.waitFor(2);
-        facebookButton.click();
+        googleButton.click();
         emailInput.click();
-        emailInput.sendKeys("aysnrkynr19@hotmail.com");
+        emailInput.sendKeys("testaysenurkaynar@gmail.com");
+        continueEmailButton.click();
         passInput.click();
-        passInput.sendKeys("Aysenur5288.");
-        loginButton.click();
+        passInput.sendKeys("Aysenur123!");
+        continuePassButton.click();
     }
 }
