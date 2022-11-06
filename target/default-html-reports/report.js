@@ -23,29 +23,14 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Add product to basket with login",
+  "name": "Add product to basket without login",
   "description": "",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "name": "I login with facebook",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "casestudy.step_def.MyStepdefs.iLoginWithFacebook()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "I verify logged in on hb homepage",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "casestudy.step_def.MyStepdefs.iVerifyLoggedInOnHbHomepage()"
-});
-formatter.result({
-  "status": "passed"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@loginsiz"
+    }
+  ]
 });
 formatter.step({
   "name": "I search with \"bilgisayar\"",

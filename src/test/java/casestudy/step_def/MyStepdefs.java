@@ -1,12 +1,10 @@
 package casestudy.step_def;
 
 import casestudy.pages.*;
-import casestudy.utils.Helper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import casestudy.utils.Driver;
 
 public class MyStepdefs {
     HomePage homepage = new HomePage();
@@ -14,17 +12,17 @@ public class MyStepdefs {
     ProductListPage productlistpage = new ProductListPage();
     ProductDetailPage productdetailpage = new ProductDetailPage();
 
+
     BasketPage basketpage = new BasketPage();
     @Given("homepage is open")
     public void homepageIsOpen() {
         homepage.verifyHomePage();
     }
 
-    @When("I login with facebook")
-    public void iLoginWithFacebook() {
+    @When("I login with google")
+    public void iLoginWithGoogle() {
         homepage.goToLoginPage();
-        loginpage.loginWithFacebook();
-
+        loginpage.loginWithGoogle();
     }
 
     @Then("I verify logged in on hb homepage")

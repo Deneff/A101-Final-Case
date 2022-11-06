@@ -16,9 +16,6 @@ public class Helper {
         }
     }
 
-    public static void clickWithLinkText(String linkText){
-        Driver.get().findElement(By.linkText(linkText)).click();
-    }
 
     public static void switchTab(){
         Set<String> windowAllWindows = Driver.get().getWindowHandles();

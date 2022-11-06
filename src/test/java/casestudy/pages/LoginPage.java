@@ -1,7 +1,6 @@
 package casestudy.pages;
 
 import casestudy.utils.Driver;
-import casestudy.utils.Helper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,9 +24,7 @@ public class LoginPage {
     public WebElement agreeButton;
 
 
-    public void loginWithFacebook() {
-        agreeButton.click();
-        Helper.waitFor(2);
+    public void loginWithGoogle() {
         googleButton.click();
         emailInput.click();
         emailInput.sendKeys("testaysenurkaynar@gmail.com");

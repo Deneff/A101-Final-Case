@@ -6,9 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Driver {
     private static WebDriver driver;
-
     public static WebDriver get() {
-
 
         if (driver == null) {
             WebDriverManager.chromedriver().setup();

@@ -12,9 +12,9 @@ import java.time.Duration;
 public class Hooks {
     @Before
     public void setup(){
+
         Driver.get().get("https://www.hepsiburada.com/");
         Driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
     }
 
     @After

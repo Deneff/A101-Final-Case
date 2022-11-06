@@ -12,7 +12,8 @@ public class HomePage {
         PageFactory.initElements(Driver.get(), this);
 
     }
-
+    @FindBy (css="#onetrust-accept-btn-handler")
+    public WebElement agreeButton;
     @FindBy(css = "a[title='Hepsiburada']")
     public WebElement hbLogo;
 
@@ -30,6 +31,9 @@ public class HomePage {
 
     public void verifyHomePage() {
         hbLogo.click();
+        if(agreeButton.isDisplayed()){
+            agreeButton.click();
+        }
     }
 
     public void goToLoginPage() {
