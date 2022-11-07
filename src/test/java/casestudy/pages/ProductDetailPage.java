@@ -2,6 +2,7 @@ package casestudy.pages;
 
 import casestudy.utils.Driver;
 import casestudy.utils.Helper;
+import casestudy.utils.Log;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,6 +24,7 @@ public class ProductDetailPage {
         Helper.addTwoDifferentProducts(".add-to-basket.button.small");
         Helper.waitFor(1);
         shoppingCart.click();
+        Log.info("Added product to basket with two different seller");
 
     }
 }

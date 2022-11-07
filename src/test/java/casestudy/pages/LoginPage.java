@@ -1,6 +1,7 @@
 package casestudy.pages;
 
 import casestudy.utils.Driver;
+import casestudy.utils.Log;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +26,7 @@ public class LoginPage {
 
 
     public void loginWithGoogle() {
+        Log.info("Login with google");
         googleButton.click();
         emailInput.click();
         emailInput.sendKeys("testaysenurkaynar@gmail.com");

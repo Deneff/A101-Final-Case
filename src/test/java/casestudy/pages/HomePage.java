@@ -1,6 +1,7 @@
 package casestudy.pages;
 
 import casestudy.utils.Helper;
+import casestudy.utils.Log;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,6 +31,7 @@ public class HomePage {
     public WebElement searchBox;
 
     public void verifyHomePage() {
+        Log.info("Open hepsiburada.com");
         hbLogo.click();
         if(agreeButton.isDisplayed()){
             agreeButton.click();
@@ -37,18 +39,21 @@ public class HomePage {
     }
 
     public void goToLoginPage() {
+        Log.info("Go to login page");
         accountButton.click();
         loginButton.click();
     }
 
     public void verifyILoggedIn() {
-     accountTitle.isDisplayed();
+        accountTitle.isDisplayed();
+        Log.info("Verify logged in");
     }
 
     public void searchWithKeyword(String keyword) {
         searchBox.click();
         searchBox.sendKeys(keyword);
         searchBox.sendKeys(Keys.RETURN);
-        Helper.waitFor(10);
+        Log.info("Search with "+keyword);
+        Helper.waitFor(5);
     }
 }

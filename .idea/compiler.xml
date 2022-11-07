@@ -9,6 +9,7 @@
         <module name="A101_FinalCase" />
         <module name="KloiaCaseStudy" />
         <module name="KloiaBootcampBDD" />
+        <module name="A101-Final-Case" />
       </profile>
     </annotationProcessing>
   </component>

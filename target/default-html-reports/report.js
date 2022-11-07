@@ -70,8 +70,10 @@ formatter.match({
   "location": "casestudy.step_def.MyStepdefs.iVerifyProductOnBasketPage()"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "org.junit.ComparisonFailure: expected:\u003c...gisayar NX.HS5EY.006[Gri]\u003e but was:\u003c...gisayar NX.HS5EY.006[Siyah]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:117)\r\n\tat org.junit.Assert.assertEquals(Assert.java:146)\r\n\tat casestudy.pages.BasketPage.verifyProducts(BasketPage.java:16)\r\n\tat casestudy.step_def.MyStepdefs.iVerifyProductOnBasketPage(MyStepdefs.java:55)\r\n\tat ✽.I verify product on basket page(file:///C:/A101-Final-Case/src/test/resources/features/study.feature:19)\r\n",
+  "status": "failed"
 });
+formatter.embedding("image/png", "embedded0.png", "screenshot");
 formatter.after({
   "status": "passed"
 });

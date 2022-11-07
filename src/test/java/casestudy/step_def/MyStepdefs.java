@@ -1,6 +1,7 @@
 package casestudy.step_def;
 
 import casestudy.pages.*;
+import casestudy.utils.Helper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -32,6 +33,7 @@ public class MyStepdefs {
 
     @And("I search with {string}")
     public void iSearchWith(String keyword) {
+        Helper.waitFor(2);
         homepage.searchWithKeyword(keyword);
     }
 
