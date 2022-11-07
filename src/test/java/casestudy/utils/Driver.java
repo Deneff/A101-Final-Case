@@ -11,7 +11,6 @@ public class Driver {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            Log.info("Hello World!");
             driver.manage().window().maximize();
 
         }

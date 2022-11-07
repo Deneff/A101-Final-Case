@@ -1,5 +1,6 @@
 package casestudy.step_def;
 
+import casestudy.utils.Log;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -15,6 +16,7 @@ public class Hooks {
 
         Driver.get().get("https://www.hepsiburada.com/");
         Driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Log.info("Test Starting!");
     }
 
     @After
@@ -24,5 +26,6 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", "screenshot");
         }
         Driver.closeDriver();
+        Log.info("Test Ended!");
     }
 }
